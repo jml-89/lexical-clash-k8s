@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-vars
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: lexicalclash
+  POSTGRES_USER: lexicalclash
+  POSTGRES_PASSWORD: wordsrock
+

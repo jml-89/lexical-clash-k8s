@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lexical-clash-vars
+  labels:
+    app: lexical-clash 
+data:
+  PGHOST: postgres
+  PGDATABASE: lexicalclash
+  PGUSER: lexicalclash
+  PGPASSWORD: wordsrock

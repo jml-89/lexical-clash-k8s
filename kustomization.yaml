@@ -1,0 +1,4 @@
+resources:
+- postgres/
+- lexical-clash/
+- routing/

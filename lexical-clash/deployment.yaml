@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lexical-clash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lexical-clash
+  template:
+    metadata:
+      labels:
+        app: lexical-clash
+    spec:
+      containers:
+        - name: lexical-clash
+          image: ghcr.io/jml-89/lexical-clash@sha256:bb70f7c9ef6b287376f02da2ef3f419d9877880c98133d7bdd789f11be6fd847
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: lexical-clash-vars
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+              ephemeral-storage: "1Gi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+              ephemeral-storage: "1Gi"
+
