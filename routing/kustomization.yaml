@@ -1,3 +1,4 @@
 resources:
 - gateway.yaml
-- httproute.yaml
+- httproute-redirect.yaml
+- httproute-serveapp.yaml
