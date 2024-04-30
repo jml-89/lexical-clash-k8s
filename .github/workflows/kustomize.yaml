@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 'install gcloud'
+        uses: 'google-github-actions/setup-gcloud@v2'
+        with:
+          version: '>= 363.0.0'
+          install_components: 'gke-cloud-auth-plugin'
+
       - uses: actions/checkout@v1
+
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
