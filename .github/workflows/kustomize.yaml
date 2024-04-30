@@ -36,4 +36,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: run kubectl
-        run: kubectl kustomize ./
+        run: kubectl apply -k lexical-clash/
