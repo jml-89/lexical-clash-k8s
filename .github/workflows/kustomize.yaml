@@ -14,7 +14,7 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
           version: '>= 363.0.0'
-          install_components: 'gke-cloud-auth-plugin'
+          install_components: 'gke-gcloud-auth-plugin'
 
       - uses: actions/checkout@v1
 
