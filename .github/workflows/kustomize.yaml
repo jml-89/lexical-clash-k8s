@@ -1,4 +1,4 @@
-name: Test Kustomize
+name: Apply Kustomization
 on: 
   push:
     branches:
@@ -15,4 +15,4 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: kustomize ./
+          args: apply -k lexical-clash/
