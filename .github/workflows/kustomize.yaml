@@ -10,21 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'install gcloud'
-        uses: 'google-github-actions/setup-gcloud@v2'
+      - name: google auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: install gcloud
+        uses: google-github-actions/setup-gcloud@v2
         with:
           version: '>= 363.0.0'
-          install_components: 'gke-gcloud-auth-plugin'
+          install_components: 'kubectl,gke-gcloud-auth-plugin'
 
-      - name: 'check install'
+      - name: check installation
         run: |-
-          'gcloud info'
-          'gke-gcloud-auth-plugin --version'
+          gcloud info
+          gke-gcloud-auth-plugin --version
+          kubectl version
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
-      - uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-        with:
-          args: apply -k lexical-clash/
+      - name: run kubectl
+        run: kubectl kustomize ./
