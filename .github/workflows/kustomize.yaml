@@ -16,6 +16,11 @@ jobs:
           version: '>= 363.0.0'
           install_components: 'gke-gcloud-auth-plugin'
 
+      - name: 'check install'
+        run: |-
+          'gcloud info'
+          'gke-gcloud-auth-plugin --version'
+
       - uses: actions/checkout@v1
 
       - uses: actions-hub/kubectl@master
