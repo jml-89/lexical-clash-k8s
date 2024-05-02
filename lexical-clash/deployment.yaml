@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: lexical-clash
-          image: ghcr.io/jml-89/lexical-clash:0d3cf50aa7a9c05eb91866d369a39aede2f684fd
+          image: ghcr.io/jml-89/lexical-clash:73dda35b7b65f4b979768944872d609b6f1a24c7
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
