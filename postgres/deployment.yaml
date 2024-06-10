@@ -22,7 +22,7 @@ spec:
             - configMapRef:
                 name: postgres-vars
           volumeMounts:
-            - mountPath: /var/lib/postgresql
+            - mountPath: /pvc/
               name: postgresdata
           resources:
             requests:

@@ -8,4 +8,4 @@ data:
   POSTGRES_DB: lexicalclash
   POSTGRES_USER: lexicalclash
   POSTGRES_PASSWORD: wordsrock
-
+  PGDATA: /pvc/data
